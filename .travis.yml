@@ -5,7 +5,12 @@ sudo: required
 services:
 - docker
 
-script:
+before_install:
+- openssl aes-256-cbc -K $encrypted_a3d7886d982d_key -iv $encrypted_a3d7886d982d_iv
+  -in udodok-jar.tar.enc -out udodok-jar.tar -d
+- tar xvf udodok-jar.tar
+
+after_success:
 - docker build -t woo00oo/udodok-frontend ./frontend
 - docker build -t woo00oo/udodok-backend ./backend
 - docker build -t woo00oo/udodok-nginx ./nginx
@@ -16,7 +21,3 @@ script:
 - docker push woo00oo/udodok-backend
 - docker push woo00oo/udodok-nginx
 
-before_install:
-- openssl aes-256-cbc -K $encrypted_a3d7886d982d_key -iv $encrypted_a3d7886d982d_iv
-  -in udodok-jar.tar.enc -out udodok-jar.tar -d
-- tar xvf ./backend/udodok-jar.tar
