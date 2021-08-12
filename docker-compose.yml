@@ -1,0 +1,26 @@
+version: "2.4"
+
+services:
+  frontend:
+    image: woo00oo/udodok-frontend
+    volumes:
+      - /app/node_modules
+      - ./frontend:/app
+    stdin_open: true
+    mem_limit: 128m
+
+  nginx: 
+    restart: always
+    image: woo00oo/udodok-nginx
+    ports: 
+      - "80:80"
+    mem_limit: 128m
+    links:
+      - frontend
+      - backend
+
+  backend:
+    image: woo00oo/udodok-backend
+    # volumes:
+    #   - ./backend:/
+    mem_limit: 128m
