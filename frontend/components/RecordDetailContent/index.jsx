@@ -8,6 +8,7 @@ import {
   ContentText,
   ContentEdit,
 } from '@components/RecordDetailContent/styles';
+import placeholder from '@images/placeholder.png';
 
 const DetailContent = (props) => {
   const bookContent = props.recordDetailData;
@@ -27,7 +28,7 @@ const DetailContent = (props) => {
       <Content>
         <ContentLeft>
           <ContentImg>
-            <img src="/images/placeholder.png"></img>
+            <img src={placeholder}></img>
           </ContentImg>
           <div className="title">{bookContent.book_name}</div>
         </ContentLeft>

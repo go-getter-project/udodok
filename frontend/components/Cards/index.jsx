@@ -4,6 +4,7 @@ import { Link, Redirect } from 'react-router-dom';
 import { Col } from 'antd';
 import 'antd/dist/antd.css';
 import { useSelector } from 'react-redux';
+import placeholder from '@images/placeholder.png';
 
 const Cards = (props) => {
   // const onClick = useCallback(() => {
@@ -36,7 +37,7 @@ const Cards = (props) => {
               {/* <div className="card-header">My Card</div> */}
               <img
                 style={{ borderTopLeftRadius: '5px', borderTopRightRadius: '5px', maxHeight: '250px' }}
-                src="images/placeholder.png"
+                src={placeholder}
                 alt=""
               />
               <div className="card-body" style={{ textAlign: 'right' }}>
@@ -64,7 +65,7 @@ const Cards = (props) => {
               {/* <div className="card-header">My Card</div> */}
               <img
                 style={{ borderTopLeftRadius: '5px', borderTopRightRadius: '5px', maxHeight: '250px' }}
-                src="images/placeholder.png"
+                src={placeholder}
                 alt=""
               />
               <div className="card-body" style={{ textAlign: 'right' }}>
