@@ -13,15 +13,15 @@ before_install:
 
 - openssl aes-256-cbc -K $encrypted_a3d7886d982d_key -iv $encrypted_a3d7886d982d_iv
   -in ./backend/udodok-jar.tar.enc -out ./backend/udodok-jar.tar -d
-- tar xvf ./backend/udodok-jar.tar
+- tar xvf udodok-jar.tar
 
 after_success:
-- docker build -t woo00oo/udodok-frontend ./frontend
+# - docker build -t woo00oo/udodok-frontend ./frontend
 - docker build -t woo00oo/udodok-backend ./backend
-- docker build -t woo00oo/udodok-nginx ./nginx
+# - docker build -t woo00oo/udodok-nginx ./nginx
 
-- echo "$DOCKER_HUB_PASSWORD" | docker login -u "$DOCKER_HUB_ID" --password-stdin
+# - echo "$DOCKER_HUB_PASSWORD" | docker login -u "$DOCKER_HUB_ID" --password-stdin
 
-- docker push woo00oo/udodok-frontend
-- docker push woo00oo/udodok-backend
-- docker push woo00oo/udodok-nginx
+# - docker push woo00oo/udodok-frontend
+# - docker push woo00oo/udodok-backend
+# - docker push woo00oo/udodok-nginx
