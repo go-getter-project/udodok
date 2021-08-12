@@ -20,7 +20,7 @@ import {
 import { Error } from '@pages/SignUp/SignUp2/styles';
 import { useSelector } from 'react-redux';
 import useInput from '@hooks/useInput';
-import pwEncrypt from '@utils/pwEncrypt.tar.enc';
+import pwEncrypt from '@utils/pwEncrypt';
 import { withRouter } from 'react-router';
 import apiController from '@apis/apiController';
 
