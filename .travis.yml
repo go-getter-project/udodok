@@ -7,7 +7,7 @@ services:
   - docker
 
 
-script:
+after_success:
   - docker build -t woo00oo/udodok-frontend ./frontend
   - docker build -t woo00oo/udodok-backend ./backend
   - docker build -t woo00oo/udodok-nginx ./nginx
