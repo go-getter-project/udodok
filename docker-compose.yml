@@ -21,6 +21,6 @@ services:
 
   backend:
     image: woo00oo/udodok-backend
-    volumes:
-      - ./backend:./
+    # volumes:
+    #   - ./backend:/
     mem_limit: 128m
