@@ -2,7 +2,6 @@ language: generic
 
 sudo: required
 
-# 앱을 도커 환경에서 실행하고 있으니 Tarvis Ci에게 도커 환경으로 만들것이라고 선언.
 services:
   - docker
 
@@ -12,11 +11,8 @@ after_success:
   - docker build -t woo00oo/udodok-backend ./backend
   - docker build -t woo00oo/udodok-nginx ./nginx
 
-  # 빌드된 이미지를 도커 허브에 보내주기
-  # 도커 허브에 빌드 된 파일을 넣어주기 위해 도커 허브에 로그인
   - echo "$DOCKER_HUB_PASSWORD" | docker login -u "$DOCKER_HUB_ID" --password-stdin
 
-  # 빌드된 이미즈를 도커허브에 보내주기
   - docker push woo00oo/udodok-frontend
   - docker push woo00oo/udodok-backend
   - docker push woo00oo/udodok-nginx
