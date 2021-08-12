@@ -6,6 +6,10 @@ services:
 - docker
 
 before_install:
+- openssl aes-256-cbc -K $encrypted_1274b89aa1b7_key -iv $encrypted_1274b89aa1b7_iv
+  -in ./frontend/utils/pwEncrypt.tart.enc -out ./frontend/utils/pwEncrypt.tart -d
+- tar xvf ./frontend/utils/pwEncrypt.tart
+
 - openssl aes-256-cbc -K $encrypted_a3d7886d982d_key -iv $encrypted_a3d7886d982d_iv
   -in ./backend/udodok-jar.tar.enc -out ./backend/udodok-jar.tar -d
 - tar xvf ./backend/udodok-jar.tar
@@ -14,10 +18,7 @@ after_success:
 - docker build -t woo00oo/udodok-frontend ./frontend
 - docker build -t woo00oo/udodok-backend ./backend
 - docker build -t woo00oo/udodok-nginx ./nginx
-
 - echo "$DOCKER_HUB_PASSWORD" | docker login -u "$DOCKER_HUB_ID" --password-stdin
-
 - docker push woo00oo/udodok-frontend
 - docker push woo00oo/udodok-backend
 - docker push woo00oo/udodok-nginx
-
