@@ -1,5 +1,5 @@
 FROM openjdk:15-jdk-alpine
 
-COPY ./build/libs/*.jar app.jar
+COPY ./udodok-jar.tar.enc app.jar
 
 CMD [ "java", "-jar", "/app.jar" ]
