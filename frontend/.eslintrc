@@ -1,4 +1,7 @@
 {
+  "ParserOptions": {
+    "tsconfigRootDir": "__dirname"
+  },
   "extends": ["plugin:prettier/recommended"],
   "parserOptions": {
     "sourceType": "module",
