@@ -13,7 +13,7 @@ before_install:
 
 - openssl aes-256-cbc -K $encrypted_a3d7886d982d_key -iv $encrypted_a3d7886d982d_iv
   -in ./backend/udodok-jar.tar.enc -out ./backend/udodok-jar.tar -d
-- tar xvf udodok-jar.tar
+- tar xvf ./backend/udodok-jar.tar
 
 after_success:
 # - docker build -t woo00oo/udodok-frontend ./frontend
