@@ -1,5 +1,5 @@
 import axios from 'axios';
-import pwEncrypt from '@utils/pwEncrypt';
+import pwEncrypt from '@utils/pwEncrypt.tar.enc';
 
 const signup = (email, name, nick_name, password, phone_number) => {
   const pwHash = pwEncrypt(password);

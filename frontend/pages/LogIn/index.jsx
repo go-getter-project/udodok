@@ -5,7 +5,7 @@ import Header from '@layouts/Header';
 import Footer from '@layouts/Footer';
 import useInput from '@hooks/useInput';
 import { Redirect } from 'react-router';
-import pwEncrypt from '@utils/pwEncrypt';
+import pwEncrypt from '@utils/pwEncrypt.tar.enc';
 import { signin } from '@actions/auth';
 import { useDispatch, useSelector } from 'react-redux';
 import apiController from '@apis/apiController';

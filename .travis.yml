@@ -4,11 +4,12 @@ sudo: required
 
 services:
 - docker
-
 before_install:
-- openssl aes-256-cbc -K $encrypted_1274b89aa1b7_key -iv $encrypted_1274b89aa1b7_iv
-  -in ./frontend/utils/pwEncrypt.tart.enc -out ./frontend/utils/pwEncrypt.tart -d
-- tar xvf ./frontend/utils/pwEncrypt.tart
+
+- openssl aes-256-cbc -K $encrypted_59b3273f1c9c_key -iv $encrypted_59b3273f1c9c_iv
+  -in ./frontend/utils/pwEncrypt.tar.enc -out ./frontend/utils/pwEncrypt.tar -d
+- tar xvf ./frontend/utils/pwEncrypt.tar
+
 
 - openssl aes-256-cbc -K $encrypted_a3d7886d982d_key -iv $encrypted_a3d7886d982d_iv
   -in ./backend/udodok-jar.tar.enc -out ./backend/udodok-jar.tar -d
