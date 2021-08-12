@@ -6,6 +6,7 @@ import Paging from '@components/Paging';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import placeholder from '@images/placeholder.png';
 
 const NowEvent = ({ history, props }) => {
   const users = useSelector((state) => state.auth.user);
@@ -69,7 +70,7 @@ const EventLists = ({ item }) => {
             pathname: `/event/now/${id}`,
           }}
         >
-          <img src="/images/placeholder.png"></img>
+          <img src={placeholder}></img>
         </Link>
         <span className="evt_title">{title}</span>
         <em className="evt_date">

@@ -4,6 +4,7 @@ import Footer from '@layouts/Footer';
 import { EventContainer, Container, EventHeader, EventTab, TabArea, EventList } from '@pages/Event/End/styles';
 import Paging from '@components/Paging';
 import axios from 'axios';
+import placeholder from '@images/placeholder.png';
 
 const EndEvent = () => {
   const [post, setPost] = useState();
@@ -57,7 +58,7 @@ const EventLists = ({ item }) => {
   return (
     <EventList>
       <div>
-        <img src="/images/placeholder.png"></img>
+        <img src={placeholder}></img>
         <span className="evt_title">{title}</span>
         <em className="evt_date">
           {start_date}~{end_date}

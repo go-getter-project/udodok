@@ -2,6 +2,7 @@ import React from 'react';
 import { Head, Head2, HeaderTop } from '@layouts/Header/styles';
 import Navbar from '@layouts/Header/Navbar';
 import { Link } from 'react-router-dom';
+import udodok from '@images/udodok.png'
 
 const Header = () => {
   return (
@@ -9,7 +10,7 @@ const Header = () => {
       <Head>
         <HeaderTop>
           <Link to="/">
-            <img alt="" src="/images/udodok.png" style={{ width: '98px' }} />
+            <img alt="" src={udodok} style={{ width: '98px' }} />
             {/* 우도독 */}
           </Link>
         </HeaderTop>

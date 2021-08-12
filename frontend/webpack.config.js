@@ -24,6 +24,7 @@ const config = {
       '@reducers': path.resolve(__dirname, 'reducers'),
       '@stores': path.resolve(__dirname, 'stores'),
       '@hoc': path.resolve(__dirname, 'hoc'),
+      '@images': path.resolve(__dirname, 'images'),
     },
   },
   entry: {

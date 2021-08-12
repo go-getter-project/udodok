@@ -10,6 +10,7 @@ import {
 } from '@components/ShareDetailContent/styles';
 import { useSelector } from 'react-redux';
 import { useParams, withRouter } from 'react-router';
+import placeholder from '@images/placeholder.png';
 
 const ShareDetailContent = (props) => {
   const { boardId } = useParams();
@@ -36,7 +37,7 @@ const ShareDetailContent = (props) => {
       <Content>
         <ContentLeft>
           <ContentImg>
-            <img src="/images/placeholder.png"></img>
+            <img src={placeholder}></img>
           </ContentImg>
           <div className="title">{props.bookTitle}</div>
         </ContentLeft>
