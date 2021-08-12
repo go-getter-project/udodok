@@ -16,12 +16,25 @@ before_install:
 - tar xvf ./backend/udodok-jar.tar -C ./backend
 
 after_success:
-# - docker build -t woo00oo/udodok-frontend ./frontend
+- docker build -t woo00oo/udodok-frontend ./frontend
 - docker build -t woo00oo/udodok-backend ./backend
-# - docker build -t woo00oo/udodok-nginx ./nginx
+- docker build -t woo00oo/udodok-nginx ./nginx
 
-# - echo "$DOCKER_HUB_PASSWORD" | docker login -u "$DOCKER_HUB_ID" --password-stdin
+- echo "$DOCKER_HUB_PASSWORD" | docker login -u "$DOCKER_HUB_ID" --password-stdin
 
-# - docker push woo00oo/udodok-frontend
-# - docker push woo00oo/udodok-backend
-# - docker push woo00oo/udodok-nginx
+- docker push woo00oo/udodok-frontend
+- docker push woo00oo/udodok-backend
+- docker push woo00oo/udodok-nginx
+
+deploy:
+  provider: elasticbeanstalk 
+  region: "ap-northeast-2" 
+  app: "udodok-app" 
+  env: "Udodokapp-env" 
+  bucket_name: elasticbeanstalk-ap-northeast-2-555236258445 
+  bucket_path: "udodok-app" 
+  on:
+    branch: master  
+  
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_ACCESS_KEY
