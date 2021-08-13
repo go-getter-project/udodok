@@ -4,7 +4,7 @@ import pwEncrypt from '@utils/pwEncrypt';
 const signup = (email, name, nick_name, password, phone_number) => {
   const pwHash = pwEncrypt(password);
   return axios.post(
-    '/api/signup',
+    'https://cors.bridged.cc/api/signup',
     {
       email,
       name,
@@ -21,7 +21,7 @@ const signup = (email, name, nick_name, password, phone_number) => {
 const signin = (email, password) => {
   return axios
     .post(
-      '/api/signin',
+      'https://cors.bridged.cc/api/signin',
       {
         email,
         password,

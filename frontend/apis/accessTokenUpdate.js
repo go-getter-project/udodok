@@ -3,7 +3,7 @@ import axios from 'axios';
 const refresh_token = JSON.parse(sessionStorage.getItem('refresh_token'));
 
 const instance = axios.create({
-  baseURL: '/api',
+  baseURL: 'https://cors.bridged.cc/api',
   timeout: 1000,
 });
 
