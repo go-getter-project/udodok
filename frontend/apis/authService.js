@@ -1,10 +1,12 @@
 import axios from 'axios';
 import pwEncrypt from '@utils/pwEncrypt';
 
+const base = process.env.NODE_ENV === 'production' ? 'http://udodokapp-env.eba-ijvwmxfm.ap-northeast-2.elasticbeanstalk.com/' : '/'
+
 const signup = (email, name, nick_name, password, phone_number) => {
   const pwHash = pwEncrypt(password);
   return axios.post(
-    '/api/signup',
+    `${base}api/signup`,
     {
       email,
       name,
@@ -21,7 +23,7 @@ const signup = (email, name, nick_name, password, phone_number) => {
 const signin = (email, password) => {
   return axios
     .post(
-      '/api/signin',
+      `${base}api/signin`,
       {
         email,
         password,
