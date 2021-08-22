@@ -8,6 +8,8 @@
 
 ## 👨‍👩‍👦‍👦 팀 소개
 
+
+
 Go-Getter (뜻 : 야심이 있는 사람, 열정이 있는 사람! )
 
 <img width="150" alt="팀 로고" src="https://user-images.githubusercontent.com/57715611/122641068-dfa0ce00-d13d-11eb-905a-cdd775a3ccae.png">
